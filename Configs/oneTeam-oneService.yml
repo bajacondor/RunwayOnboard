@@ -1,0 +1,8 @@
+configs:
+  teamName: oneTeam
+  serviceName: oneService
+  subServiceName: subOne
+  serviceDescription: descOne
+  IAMRole: two
+  email_dist: emailOneagain
+  dynatrace: 'on'

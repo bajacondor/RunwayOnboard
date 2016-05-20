@@ -1,0 +1,17 @@
+extends layout
+include mixins.jade
+block content
+  .panel.panel-primary
+    .panel-heading
+        h3.panel-title New Onboarding
+    .panel-body
+        form(method='post' action='/new')
+          each key, value in config
+              +formItem(value, key)
+          button.btn.btn-primary(type='submit')
+              span.glyphicon.glyphicon-plus
+              |  Submit
+          a.btn.btn-danger.pull-right(href='/')
+            span.glyphicon.glyphicon-remove
+            |  Cancel
+  //pre #{JSON.stringify(config, null, 2)}

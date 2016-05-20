@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 14, 2016, 2:14:30 PM
+    Author     : dave
+*/
+
+.red-border {
+    border: solid red 2px;
+}
+
+.rotate {
+-webkit-animation: spin 1.7s infinite linear;
+-moz-animation: spin 1.7s infinite linear;
+-o-animation: spin 1.7s infinite linear;
+-ms-animation: spin 1.7s infinite linear;
+}
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg);}
+100% { -webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes spin {
+0% { -moz-transform: rotate(0deg);}
+100% { -moz-transform: rotate(360deg);}
+}
+@-o-keyframes spin {
+0% { -o-transform: rotate(0deg);}
+100% { -o-transform: rotate(360deg);}
+}
+@-ms-keyframes spin {
+0% { -ms-transform: rotate(0deg);}
+100% { -ms-transform: rotate(360deg);}
+}

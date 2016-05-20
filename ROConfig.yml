@@ -1,0 +1,69 @@
+## YAML Template.
+---
+title: Runway Onboarding Questions
+tabs:
+    - general
+    - service
+    - unknown
+configs:
+    serviceGroup:
+        label: "Service Group"
+        description: "The name of the team."
+        priority: 0
+        type: "text"
+    serviceName:
+        label: "Service Name"
+        description: "The name of the team."
+        priority: 0
+        type: "text"
+        subConfigs:
+            subServiceName:
+                label: "Sub service name"
+                description: "The name of the team."
+                type: "text"
+    serviceDescription:
+        label: "Service Description"
+        description: "The name of the team."
+        priority: 0
+        type: "textArea"
+    IAMRole:
+        label: "IAM Role"
+        description: "The IAM Role to use for the service."
+        priority: 0
+        type: "urlSelect"
+        url: "/ajax/urlSelect?serviceName={{serviceName}}&teamName={{teamName}}"
+    IAMRole2:
+        label: "IAM Roles"
+        description: "The IAM Role to use for the service."
+        priority: 0
+        type: "select"
+        options: 
+            optionOne: "The first option text"
+            somethingElse: "The second option text"
+            anotherOption: "The third option text"
+            optionThree: "The fourth option text"
+    createJira:
+        label: "Create Jira Issues?"
+        description: "The name of the team."
+        priority: 0
+        type: "boolean"
+    email_dist:
+        label: "Email Distribution List"
+        priority: 1
+        customerResponsibility: true
+        tab: "general"
+        type: "text"
+    dynatrace:
+        label: "Dynatrace Support"
+        priority: 3
+        customerResponsibility: true
+        tab: "general"
+        type: "boolean"
+    s3buckets:
+        label: "Create s3 Buckets"
+        priority: 3
+        type: "job"
+        jobAction: "runCreateS3"
+...
+    
+    

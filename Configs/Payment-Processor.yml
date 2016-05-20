@@ -1,0 +1,8 @@
+configs:
+  teamName: Payment
+  serviceName: Processor
+  subServiceName: ''
+  serviceDescription: ''
+  IAMRole: two
+  email_dist: Runway
+  dynatrace: 'on'

@@ -1,0 +1,47 @@
+mixin formItem(id, config)
+    if (config.type==='text')
+        .form-group
+            strong.text-primary(for=id)= config.label
+            small.text-muted(style='display: block;')= config.description
+            input.form-control(type='text' value="#{config.value||''}" id=id  name=id)
+    else if (config.type==='textArea')
+        .form-group
+            strong.text-primary(for=id)= config.label
+            small.text-muted(style='display: block;')= config.description
+            textarea.form-control(id=id name=id)= config.value||''
+    else if (config.type==='boolean')
+        .checkbox.form-group
+            label
+                input(type='checkbox' id=id name=id checked=config.value)
+                strong.text-primary= config.label
+            small.text-muted(style='display: block;')= config.description
+    else if(config.type==='select')
+        strong.text-primary(for=id)= config.label
+        small.text-muted(style='display: block;')= config.description
+        .input-group
+            select.form-control.selectpicker(id=id name=id)
+                 each value, key in config.options
+                    option(value=key)= value
+    else if(config.type==='ursSelect')
+        .form-group
+            strong.text-primary(for=id)= config.label
+            small.text-muted(style='display: block;')= config.description
+            .input-group
+                select.form-control.selectpicker(class=config.value?'':'red-border' data-url=config.url id=id name=id disabled=config.value?false:true)
+                    if config.value
+                        option(selected)= config.value
+                span.input-group-addon(style='padding:3px 4px;')
+                    button.btn.btn-primary.btn-sm(type='button' onClick="updateSelect(\'#{id}\')")
+                        span.glyphicon.glyphicon-refresh
+    if (config.hasOwnProperty('subConfigs'))
+        div(style='padding-left:20px')
+            each key, value in config.subConfigs
+                +formItem(value, key)
+                
+mixin showItem(id, config)
+    li
+        h7= config.label + ' = ' 
+            if config.jobAction
+                span(onClick='alert(\''+config.jobAction+'\')').text-primary.glyphicon.glyphicon-wrench.btn.btn-xs.btn-primary
+            else
+                span.text-primary= config.value

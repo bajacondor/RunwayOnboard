@@ -1,0 +1,11 @@
+extends layout
+include mixins.jade
+block content
+  ul
+    each value, key in job
+        +showItem(key, value)
+  a(href='/edit/'+jobTitle)
+    button.btn.btn-primary 
+        span.glyphicon.glyphicon-edit
+        |  Edit
+ 

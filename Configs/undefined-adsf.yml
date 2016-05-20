@@ -1,0 +1,8 @@
+configs:
+  serviceGroup: asdf
+  serviceName: adsf
+  subServiceName: asdf
+  serviceDescription: dafsadwf
+  IAMRole: three
+  email_dist: asdfasdf
+  dynatrace: 'on'
